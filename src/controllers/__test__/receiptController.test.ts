@@ -1,27 +1,27 @@
 import { Receipt } from "../../Models/ReceiptModels";
 import { countPoints, getRule1Points, getRule2Points, getRule3Points, getRule4Points, getRule5Points, getRule6Points, getRule7Points } from "../receiptController"
 
-const inputRecipt:Receipt = {
+const inputRecipt: Receipt = {
     retailer: "M&M Corner Market",
     purchaseDate: "2022-03-20",
     purchaseTime: "14:33",
     items: [
-      {
-        shortDescription: "Gatorade",
-        price: "2.25"
-      },{
-        shortDescription: "Gatorade",
-        price: "2.25"
-      },{
-        shortDescription: "Gatorade",
-        price: "2.25"
-      },{
-        shortDescription: "Gatorade",
-        price: "2.25"
-      }
+        {
+            shortDescription: "Gatorade",
+            price: "2.25"
+        }, {
+            shortDescription: "Gatorade",
+            price: "2.25"
+        }, {
+            shortDescription: "Gatorade",
+            price: "2.25"
+        }, {
+            shortDescription: "Gatorade",
+            price: "2.25"
+        }
     ],
     total: "9.00"
-  };
+};
 describe('receiptController', () => {
     it('should return correct points for each rule', () => {
         const rule1Points = getRule1Points(inputRecipt);
