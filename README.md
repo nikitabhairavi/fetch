@@ -10,7 +10,7 @@
     NOTE: you can change the port by making changes to the .env file by updating the value for `PORT=8000`
     c. In the postman extension create a request as shown below. 
 
-       ![Alt text](image-3.png)
+       ![Alt text](image-4.png)
 
         NOTE: Paste sample receipt in the body and make sure you paste it in the raw format and it shows JSON format once you are done
     d. copy the id you get from the response
