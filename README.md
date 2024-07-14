@@ -27,7 +27,7 @@
     b. to check test coverage: npx jest --coverage
 
 
-**** Results for sample receipt 1: ****
+*** Results for sample receipt 1: ***
 
 ```json
 {
@@ -57,7 +57,7 @@
 ```
 ![Alt text](image-6.png)
 
-**** Results for sample receipt 2: ****
+*** Results for sample receipt 2: ***
 
 ```json
 {
@@ -85,3 +85,7 @@
 
 ![Alt text](image-5.png)
 
+
+***Test Coverage Results***
+
+![Alt text](image-7.png)
