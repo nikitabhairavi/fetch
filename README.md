@@ -8,3 +8,4 @@
 
 
 to run tests : npx jest
+to check test coverage: npx jest --test

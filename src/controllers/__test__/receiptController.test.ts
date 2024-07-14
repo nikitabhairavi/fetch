@@ -1,6 +1,9 @@
 import { Receipt } from "../../Models/ReceiptModels";
-import { countPoints, getRule1Points, getRule2Points, getRule3Points, getRule4Points, getRule5Points, getRule6Points, getRule7Points } from "../receiptController"
+import { countPoints, getRule1Points, getRule2Points, getRule3Points, getRule4Points, getRule5Points, getRule6Points, getRule7Points, processReceiptAndGetID } from "../receiptController"
 
+jest.mock('uuid', () => ({
+    v7: jest.fn().mockResolvedValue('mockId')
+}));
 const inputRecipt: Receipt = {
     retailer: "M&M Corner Market",
     purchaseDate: "2022-03-20",
@@ -43,5 +46,5 @@ describe('receiptController', () => {
         const total = countPoints(inputRecipt);
 
         expect(total).toEqual(rule1Points + rule2Points + rule3Points + rule4Points + rule5Points + rule6Points + rule7Points);
-    })
+    });
 })

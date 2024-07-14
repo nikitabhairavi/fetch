@@ -26,7 +26,7 @@ export const getPoints = async (req: Request, res: Response, next: NextFunction)
     }
 }
 
-const processReceiptAndGetID = (receipt: Receipt): string => {
+export const processReceiptAndGetID = (receipt: Receipt): string => {
     const receiptId = uuidv7();
     points[receiptId] = countPoints(receipt);
     return receiptId;
