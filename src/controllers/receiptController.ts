@@ -4,22 +4,23 @@ import {v7 as uuidv7} from 'uuid';
 import { ApiError } from "../Models/ApiError";
 
 let points: Record<string, number> = {};
-export const getReceipts = async (request:Request, res: Response, next: NextFunction) => {
+export const getReceipts = async (req:Request, res: Response, next: NextFunction) => {
     try {
-        const receipt: Receipt = request.body;
+        const receipt: Receipt = req.body;
         const receiptId = processReceiptAndGetID(receipt);
         return res.status(200).send({id:receiptId});
     }  catch(error) {
         next(new ApiError({}, 500, 'Error'));
     }
 }
-export const getPoints = async(req: Request, response:Response, next:NextFunction) => {
+export const getPoints = async(req: Request, res:Response, next:NextFunction) => {
     try {
         const id = req.params.id;
+        console.log(points, '....');
         if (!points[id]) {
             throw new ApiError({}, 400, 'Receipt with the given id does not exist');
         }
-        response.status(200).send({points: points[id]});
+        res.status(200).send({points: points[id]});
 
     } catch(error) {
         next(error);

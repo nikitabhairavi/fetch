@@ -9,9 +9,9 @@ const expectedTimeStampFormat = /^([01]\d|2[0-3]):([0-5]\d)$/;
 const expectedPriceFormat = /^\d+\.\d{2}$/;
 const expectedDescriptionFormat = /^[\W\s\-]+$/
 // a function to validate the response for getReceipts
- const validateReceipts = (request:Request, response:Response, next:NextFunction) => {
+ const validateReceipts = (req:Request, response:Response, next:NextFunction) => {
     try {
-        const receipt:Receipt = request.body;
+        const receipt:Receipt = req.body;
         if (!receipt) {
             throwAppropriateError('invalidReceipt');
         }
@@ -36,9 +36,8 @@ const expectedDescriptionFormat = /^[\W\s\-]+$/
                 throwAppropriateError('invalidDescription');
             }
         }
-
+        next();
     } catch(error) {
-        console.log('in the error part');
         next(error);
     }
 }
@@ -66,7 +65,6 @@ function throwAppropriateError(error:ValidationError) {
         default:
             errorDescription = 'invalid receipt';
     }
-    console.log("here ----");
     throw new ApiError({}, 400, errorDescription); 
 }
 export default validateReceipts;

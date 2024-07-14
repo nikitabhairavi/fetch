@@ -1,12 +1,11 @@
 import express, {Express} from "express";
 import dotenv from "dotenv";
+dotenv.config();
 import morgan from "morgan";
 import rateLimit from "express-rate-limit";
 import cors from "cors";
-import verify from "./middleware/validations";
 import receipt from "./routes/receiptsroutes";
 import error from "./middleware/formatError"
-dotenv.config();
 
 const app: Express = express();
 const port = process.env.PORT || 3000;
@@ -18,7 +17,7 @@ app.use(rateLimit({
 }));
 app.use(cors());
 
-app.use("/receipts", verify, receipt);
+app.use("/receipts", receipt);
 app.use(error);
 
 app.listen(port, () => {
