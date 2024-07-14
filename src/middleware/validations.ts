@@ -7,9 +7,9 @@ const expectedRetailerFormat = /^[\w\s\-&]+$/;
 const expectedDateFormat = /^\d{4}-\d{2}-\d{2}$/;
 const expectedTimeStampFormat = /^([01]\d|2[0-3]):([0-5]\d)$/;
 const expectedPriceFormat = /^\d+\.\d{2}$/;
-const expectedDescriptionFormat = /^[\W\s\-]+$/
+const expectedDescriptionFormat = /^[\w\s\-]+$/
 // a function to validate the response for getReceipts
- const validateReceipts = (req:Request, response:Response, next:NextFunction) => {
+export const validateReceipts = (req:Request, response:Response, next:NextFunction) => {
     try {
         const receipt:Receipt = req.body;
         if (!receipt) {
@@ -32,7 +32,7 @@ const expectedDescriptionFormat = /^[\W\s\-]+$/
             if (!expectedPriceFormat.test(item.price)) {
                 throwAppropriateError('invalidPrice');
             }
-            if (expectedDescriptionFormat.test(item.shortDescription)) {
+            if (!expectedDescriptionFormat.test(item.shortDescription)) {
                 throwAppropriateError('invalidDescription');
             }
         }
@@ -41,7 +41,7 @@ const expectedDescriptionFormat = /^[\W\s\-]+$/
         next(error);
     }
 }
-function throwAppropriateError(error:ValidationError) {
+export function throwAppropriateError(error:ValidationError) {
     let errorDescription;
     switch(error) {
         case 'invalidDate':

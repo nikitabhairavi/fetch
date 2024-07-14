@@ -1,5 +1,7 @@
 import { Receipt } from "../../Models/ReceiptModels";
-import { countPoints, getRule1Points, getRule2Points, getRule3Points, getRule4Points, getRule5Points, getRule6Points, getRule7Points, processReceiptAndGetID } from "../receiptController"
+import { countPoints, getReceipts, getRule1Points, getRule2Points, getRule3Points, getRule4Points, getRule5Points, getRule6Points, getRule7Points, processReceiptAndGetID } from "../receiptController"
+import {v7 as uuidv7} from "uuid";
+import {NextFunction, Request, Response} from 'express';
 
 jest.mock('uuid', () => ({
     v7: jest.fn().mockResolvedValue('mockId')
@@ -25,6 +27,7 @@ const inputRecipt: Receipt = {
     ],
     total: "9.00"
 };
+
 describe('receiptController', () => {
     it('should return correct points for each rule', () => {
         const rule1Points = getRule1Points(inputRecipt);
@@ -46,5 +49,10 @@ describe('receiptController', () => {
         const total = countPoints(inputRecipt);
 
         expect(total).toEqual(rule1Points + rule2Points + rule3Points + rule4Points + rule5Points + rule6Points + rule7Points);
+    });
+    it ('should set id for the given request and set points', () => {
+        (uuidv7 as jest.Mock).mockReturnValue("mockId");
+        const receiptId = processReceiptAndGetID(inputRecipt);
+        expect(receiptId).toEqual('mockId');
     });
 })
