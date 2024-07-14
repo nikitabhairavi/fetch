@@ -16,7 +16,6 @@ export const getReceipts = async (req:Request, res: Response, next: NextFunction
 export const getPoints = async(req: Request, res:Response, next:NextFunction) => {
     try {
         const id = req.params.id;
-        console.log(points, '....');
         if (!points[id]) {
             throw new ApiError({}, 400, 'Receipt with the given id does not exist');
         }
