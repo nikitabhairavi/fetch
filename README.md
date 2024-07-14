@@ -20,8 +20,8 @@
     e. create a get request with the id that you got from the response 
        ![Alt text](image-2.png)
         NOTE: make sure you add the id you received from the post request
-        
+
 4. HOW_TO_RUN_TESTS:
 
     a. to run tests : npx jest   
-    b. to check test coverage: npx jest --test
+    b. to check test coverage: npx jest --coverage
