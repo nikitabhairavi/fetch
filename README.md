@@ -29,7 +29,7 @@
 
 **** Results for sample receipt 1: ****
 
-``
+```json
 {
   "retailer": "Target",
   "purchaseDate": "2022-01-01",
@@ -54,10 +54,12 @@
   ],
   "total": "35.35"
 }
-``
+```
 ![Alt text](image-6.png)
+
 **** Results for sample receipt 2: ****
-``
+
+```json
 {
   "retailer": "M&M Corner Market",
   "purchaseDate": "2022-03-20",
@@ -79,7 +81,7 @@
   ],
   "total": "9.00"
 }
-``
+```
 
 ![Alt text](image-5.png)
 
