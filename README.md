@@ -1,13 +1,13 @@
 
 1. clone the repo
-2. npm install
+2. ```npm install```
 
 3. HOW_TO_TEST_APIS:
 
     a. install the following postman extension
         ![Alt text](image.png)
 
-    b. to start the server: npx ts-node src/index.ts 
+    b. to start the server: ```text npx ts-node src/index.ts``` 
     on using this command you will get a message :Server is running at http://localhost:8000
     NOTE: you can change the port by making changes to the .env file by updating the value for PORT=8000
 
@@ -23,8 +23,8 @@
 
 4. HOW_TO_RUN_TESTS:
 
-    a. to run tests : npx jest   
-    b. to check test coverage: npx jest --coverage
+    a. to run tests : ```npx jest```   
+    b. to check test coverage: ```npx jest --coverage```
 
 
 *** Results for sample receipt 1: ***
