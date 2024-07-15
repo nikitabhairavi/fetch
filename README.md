@@ -93,3 +93,7 @@
 ***Sample Response for Invalid Data***
 
 ![Alt text](image-8.png)
+
+![Alt text](image-9.png)
+
+![Alt text](image-10.png)
