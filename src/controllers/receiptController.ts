@@ -2,6 +2,7 @@ import { NextFunction, Request, Response } from "express";
 import { Receipt } from "../Models/ReceiptModels";
 import { v7 as uuidv7 } from 'uuid';
 import { ApiError } from "../Models/ApiError";
+import { getRule1Points, getRule2Points, getRule3Points, getRule4Points, getRule5Points, getRule6Points, getRule7Points } from "../Utils/receiptControllerUtils";
 
 let points: Record<string, number> = {};
 export const getReceipts = async (req: Request, res: Response, next: NextFunction) => {
@@ -32,32 +33,6 @@ export const processReceiptAndGetID = (receipt: Receipt): string => {
     return receiptId;
 }
 
-export const getRule1Points = (receipt: Receipt) => {
-    return receipt.retailer.replace(/[^a-zA-Z0-9]/g, '').length
-};
-export const getRule2Points = (receipt: Receipt) => {
-    return parseFloat(receipt.total) % 1 === 0 ? 50 : 0;
-}
-export const getRule3Points = (receipt: Receipt) => {
-    return parseFloat(receipt.total) % 0.25 === 0 ? 25 : 0;
-}
-export const getRule4Points = (receipt: Receipt) => {
-    return Math.floor((receipt.items.length / 2)) * 5;
-}
-export const getRule5Points = (receipt: Receipt) => {
-    let rule5Points: number = 0;
-    receipt.items.forEach((item) => {
-        rule5Points += item.shortDescription.trim().length % 3 === 0 ? Math.ceil(parseFloat(item.price) * 0.2) : 0;
-    })
-    return rule5Points;
-}
-export const getRule6Points = (receipt: Receipt) => {
-    return parseInt(receipt.purchaseDate.split('-')[2], 10) % 2 !== 0 ? 6 : 0;
-}
-export const getRule7Points = (receipt: Receipt) => {
-    const hourOfPurchase = parseInt(receipt.purchaseTime.split(':')[0], 10);
-    return hourOfPurchase >= 14 && hourOfPurchase < 16 ? 10 : 0;
-}
 export const countPoints = (receipt: Receipt) => {
     // check Alphanumeric characters in the retailer name;
     return getRule1Points(receipt) +

@@ -1,0 +1,11 @@
+export const RULE_FAIL_POINTS = 0;
+export const POINTS_FOR_RULE_2 = 50;
+export const POINTS_FOR_RULE_3 = 25;
+export const ITEM_GROUP_COUNT_RULE_4 = 2;
+export const POINTS_FOR_RULE_4 = 5;
+export const CHAR_MULTIPLES_RULE_5 = 3;
+export const MULTIPLY_BY_FOR_RULE_5 = 0.2;
+export const POINTS_PER_ODD_PURCHASE_DATE = 6;
+export const TIME_LOWER_LIMIT_RULE_7 = 14;
+export const TIME_UPPER_LIMIT_RULE_7 = 16;
+export const POINTS_FOR_RULE_7 = 10;

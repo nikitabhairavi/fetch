@@ -1,30 +1,11 @@
-import { ApiError } from "../../Models/ApiError";
-import { Receipt } from "../../Models/ReceiptModels";
-import validateReceipts, { throwAppropriateError } from "../../middleware/validations";
+import { ApiError } from "../Models/ApiError";
+import { Receipt } from "../Models/ReceiptModels";
+import { mockReceipt } from "../__mocks__/mockReceipt";
+import validateReceipts, { throwAppropriateError } from "../middleware/validations";
 import {NextFunction, Request, Response} from 'express'; 
-const inputRecipt: Receipt = {
-    retailer: "M&M Corner Market",
-    purchaseDate: "2022-03-20",
-    purchaseTime: "14:33",
-    items: [
-        {
-            shortDescription: "Gatorade",
-            price: "2.25"
-        }, {
-            shortDescription: "Gatorade",
-            price: "2.25"
-        }, {
-            shortDescription: "Gatorade",
-            price: "2.25"
-        }, {
-            shortDescription: "Gatorade",
-            price: "2.25"
-        }
-    ],
-    total: "9.00"
-};
+
 const request:Partial<Request> = {
-    body:inputRecipt
+    body:mockReceipt
 }
 const response:Partial<Response> = {}
 const next:jest.Mock<NextFunction> = jest.fn();
