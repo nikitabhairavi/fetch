@@ -1,7 +1,5 @@
 import { Receipt } from "../Models/ReceiptModels";
-import {
-RULE_VALUES
-} from "../constants/ruleContants";
+import { RULE_VALUES } from "../constants/ruleContants";
 
 export const getRule1Points = (receipt: Receipt) => {
   return receipt.retailer.replace(/[^a-zA-Z0-9]/g, "").length;
@@ -26,7 +24,9 @@ export const getRule5Points = (receipt: Receipt) => {
   let rule5Points: number = 0;
   receipt.items.forEach((item) => {
     rule5Points +=
-      item.shortDescription.trim().length % RULE_VALUES.CHAR_MULTIPLES_RULE_5 === 0
+      item.shortDescription.trim().length %
+        RULE_VALUES.CHAR_MULTIPLES_RULE_5 ===
+      0
         ? Math.ceil(parseFloat(item.price) * RULE_VALUES.MULTIPLY_BY_FOR_RULE_5)
         : RULE_VALUES.RULE_FAIL_POINTS;
   });
