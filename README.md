@@ -7,7 +7,7 @@
     a. install the following postman extension
         ![Alt text](image.png)
 
-    b. to start the server: ```text npx ts-node src/index.ts``` 
+    b. to start the server: ```npx ts-node src/index.ts``` 
     on using this command you will get a message :Server is running at http://localhost:8000
     NOTE: you can change the port by making changes to the .env file by updating the value for PORT=8000
 
