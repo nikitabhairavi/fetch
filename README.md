@@ -89,3 +89,7 @@
 ***Test Coverage Results***
 
 ![Alt text](image-7.png)
+
+***Sample Response for Invalid Data***
+
+![Alt text](image-8.png)
