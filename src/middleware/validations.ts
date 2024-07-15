@@ -1,7 +1,7 @@
-import { ApiError } from "../Models/ApiError";
-import { Receipt } from "../Models/ReceiptModels";
+import { ApiError } from "../models/ApiError";
+import { Receipt } from "../models/ReceiptModels";
 import { NextFunction, Request, Response } from "express";
-import { ValidationError } from "../Models/ValidationError";
+import { ValidationError } from "../models/ValidationError";
 
 const expectedRetailerFormat = /^[\w\s\-&]+$/;
 const expectedDateFormat = /^\d{4}-\d{2}-\d{2}$/;

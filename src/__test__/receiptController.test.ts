@@ -1,4 +1,4 @@
-import { Receipt } from "../Models/ReceiptModels";
+import { Receipt } from "../models/ReceiptModels";
 import { processReceiptAndGetID } from "../controllers/receiptController";
 import { v7 as uuidv7 } from "uuid";
 import { mockReceipt } from "../__mocks__/mockReceipt";

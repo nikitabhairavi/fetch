@@ -1,5 +1,5 @@
-import { ApiError } from "../Models/ApiError";
-import { Receipt } from "../Models/ReceiptModels";
+import { ApiError } from "../models/ApiError";
+import { Receipt } from "../models/ReceiptModels";
 import { mockReceipt } from "../__mocks__/mockReceipt";
 import validateReceipts, {
   throwAppropriateError,

@@ -1,5 +1,5 @@
 import { Response, Request, NextFunction } from "express";
-import { ApiError } from "../Models/ApiError";
+import { ApiError } from "../models/ApiError";
 
 export function formatAndReturnError(
   error: ApiError,

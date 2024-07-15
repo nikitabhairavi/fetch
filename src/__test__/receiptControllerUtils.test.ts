@@ -6,7 +6,7 @@ import {
   getRule5Points,
   getRule6Points,
   getRule7Points,
-} from "../Utils/receiptControllerUtils";
+} from "../utils/receiptControllerUtils";
 import { mockReceipt } from "../__mocks__/mockReceipt";
 import { countPoints } from "../controllers/receiptController";
 

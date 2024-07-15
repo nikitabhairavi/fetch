@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
-import { Receipt } from "../Models/ReceiptModels";
+import { Receipt } from "../models/ReceiptModels";
 import { v7 as uuidv7 } from "uuid";
-import { ApiError } from "../Models/ApiError";
+import { ApiError } from "../models/ApiError";
 import {
   getRule1Points,
   getRule2Points,
@@ -10,7 +10,7 @@ import {
   getRule5Points,
   getRule6Points,
   getRule7Points,
-} from "../Utils/receiptControllerUtils";
+} from "../utils/receiptControllerUtils";
 
 let points: Record<string, number> = {};
 export const getReceipts = async (

@@ -1,4 +1,4 @@
-import { Receipt } from "../Models/ReceiptModels";
+import { Receipt } from "../models/ReceiptModels";
 import { RULE_VALUES } from "../constants/ruleContants";
 
 export const getRule1Points = (receipt: Receipt) => {
